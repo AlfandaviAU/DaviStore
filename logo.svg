@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="308.333" height="258.333" viewBox="0 0 308.333 258.333">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke: #fff;
+        stroke-width: 8.333px;
+      }
+
+      .cls-2 {
+        font-size: 150px;
+        fill: #fff;
+        font-family: ø, ø;
+      }
+    </style>
+  </defs>
+  <rect class="cls-1" x="4.167" y="4.167" width="300" height="250"/>
+  <text id="DS" class="cls-2" x="57.597" y="182.034">DS</text>
+</svg>
