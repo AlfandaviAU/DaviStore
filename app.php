@@ -1,10 +1,17 @@
+<?php
+    session_start();
+    if (!isset($_SESSION['username'])){
+        header("Location: login.php");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="card.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,16 +26,19 @@
     
         <ul class="nav-links">
             <li>
-                <a href="index.html">Home</a>
+                <a href="index.php">Home</a>
             </li>
             <li>
-                <a href="about.html">About</a>
+                <a href="about.php">About</a>
             </li>
             <li>
                 <a href="https://github.com/AlfandaviAU">Project</a>
             </li>
             <li>
                 <a href="https://www.instagram.com/alfan.davv/">Contact Me</a>
+            </li>
+            <li>
+                <a href="logout.php" class="button">Logout</a>
             </li>
         </ul>
         <div class="triplebar" onclick = "navSlide()">
@@ -38,54 +48,26 @@
         </div>
     </nav>
     <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
     <div class="main">
         <img src="logo.svg" width="150px" height="150px">
         <h1>Davi Store by Alfandavi 13519211</h1>
         <!-- <button class="buttonBoi" onclick="buttonBois()">Sort</button> -->
-    </div>
-    
-    <section class="card-list">
-      <div id="card-batch">
-          
-      </div>
-      <!-- <article class="card">
-        <header class="card-header">
-          <p>Arcana Monkey King</p>
-          <h2>Great Sage's Reckoning</h2>
-          <img src="logo-mk.png">
-        </header>
-        <div class="arcana">
-          <div class="arcana-price-prefix">Rp 270.000,-</div>
-          <div class="tags">
-            <a href="#">Buy Now</a>
+        <h2>Keranjang Belanja Anda</h2>
+        <div id="main">
         </div>
-      </article> -->
-      <!-- <article id="card2"></article> -->
-      <!-- <article class="card"></p>
-      <article class="card"></p>
-      <article class="card"></p>
-      <article class="card"></p>
-      <article class="card"></p>
-      <article class="card"></p>
-      <article class="card"></p>
-      <article class="card"></p>
-      <article class="card"></p>
-      <article class="card"></p>
-      <article class="card"></p> -->
- 
-    </section>
-    
-    <script>
-      descBook(5);
-      // generateArticleBatch();
-      // generateArticle("card2");
-      // generateArticle("card");
-      // generateArticle("card");
-      // generateArticle("card");
-      // generateArticle("card");
-      // generateArticle("card");
-      // generateArticle("card");
-      // generateArticle("card");
+        <button onclick="sumharga();" >Submit</button>
+        <button onclick="window.location.reload()" >Reload to previous cookie</button>
+        <div id="sumtotal">
+        </div>
+    </div>
+    <script>        
+        document.cookie = "username = "+"<?php echo $_SESSION['username'] ?>"+"";
+        // console.log(document.cookie);
+        generateTableBatch();  
+        // COOKIE
+        
+        // console.log(getCookie("price") != null);
     </script>
 </body>
 </html>

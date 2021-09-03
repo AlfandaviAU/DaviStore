@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if (!isset($_SESSION['username'])){
+        header("Location: login.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,16 +25,19 @@
     
         <ul class="nav-links">
             <li>
-                <a href="index.html">Home</a>
+                <a href="index.php">Home</a>
             </li>
             <li>
-                <a href="about.html">About</a>
+                <a href="about.php">About</a>
             </li>
             <li>
                 <a href="https://github.com/AlfandaviAU">Project</a>
             </li>
             <li>
                 <a href="https://www.instagram.com/alfan.davv/">Contact Me</a>
+            </li>
+            <li>
+                <a href="app.php">Me</a>
             </li>
         </ul>
         <div class="triplebar" onclick = "navSlide()">
@@ -38,25 +47,10 @@
         </div>
     </nav>
     <script src="app.js"></script>
-    <div class="main" style="width: 20em;margin: 10em auto;">
-        <article class="card">
-            <header class="card-header">
-              <h2>How to make this website</h2>
-            </header>
-            <div class="arcana">
-                <div class="arcana-price-prefix">1. Searching at youtube how to make navbar pro brr brr</div>
-                <div class="arcana-price-prefix">2. How to json in 2mins</div>
-                <div class="arcana-price-prefix">3. Asking friend for help</div>
-                <div class="arcana-price-prefix">4. Also using vanilla js make me brr</div>
-            
-            </div>
-          </article>
-        <!-- <img src="logo.svg" width="150px" height="150px"> -->
-        <!-- <h1>How to make this website</h1>
-        <h2>1. Searching at youtube how to make navbar pro brr brr</h2>
-        <h2>2. How to json in 2mins</h2>
-        <h2>3. Asking friend for help</h2>
-        <h2>4. Also using vanilla js make me brr</h2> -->
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+    <div class="main">
+        <img src="logo.svg" width="150px" height="150px">
+        <h1>Davi Store by Alfandavi 13519211</h1>
         <!-- <button class="buttonBoi" onclick="buttonBois()">Sort</button> -->
     </div>
     
@@ -92,7 +86,7 @@
     </section>
     
     <script>
-    //   descBook(0);
+      descBook(3);
       // generateArticleBatch();
       // generateArticle("card2");
       // generateArticle("card");

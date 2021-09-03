@@ -48,6 +48,35 @@ a {
     clear: both;
     position: relative;
 }
+.cardlogin {
+    height:400px;
+    width: 400px;
+    padding: 1.5rem;
+    border-radius: 16px;
+    background: #17141d;
+    box-shadow: -1rem 0 3rem #000;
+    /* flex-direction: column; */
+    transition: .2s;
+    margin: 0 auto;
+    scroll-snap-align: start;
+    clear: both;
+    position: relative;
+    width: 20em; 
+    margin: 10em auto; 
+    display: block
+}
+
+.cardlogin h2{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+.content {
+    margin: 0 auto;
+}
+
 
 .card:focus-within~.card, .card:hover~.card {
     transform: translateX(10px);
@@ -160,4 +189,57 @@ a {
 
 a {
     color: white !important;
+}
+
+.button {
+    margin-top: 10px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: .5rem;
+    color: white;
+    background: #17141d;
+    text-transform: uppercase;
+    font-size: .66rem;
+    border: 3px solid #28242f;
+    border-radius: 2rem;
+    padding: .2rem .85rem .25rem;
+    position: relative;
+    
+}
+input[type="submit"].button:hover {
+    background: linear-gradient(90deg,#ff8a00,#e52e71);
+    text-shadow: none;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-box-decoration-break: clone;
+    background-clip: text;
+    border-color: white;
+}
+
+.button:hover {
+    background: linear-gradient(90deg,#ff8a00,#e52e71);
+    text-shadow: none;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-box-decoration-break: clone;
+    background-clip: text;
+    border-color: white;
+}
+
+.cart{
+    cursor: pointer;
+}
+
+.cart-res{
+    margin: 0 auto;
+    display: block;
+}
+
+.quantity_batch{
+    display:flex;
+}
+
+.quantity_batch button{
+    margin-left: 2rem;
+    padding: 0.5rem;
 }

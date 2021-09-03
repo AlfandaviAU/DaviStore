@@ -1,10 +1,17 @@
+<?php
+    session_start();
+    if (!isset($_SESSION['username'])){
+        header("Location: login.php");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="card.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,16 +26,19 @@
     
         <ul class="nav-links">
             <li>
-                <a href="index.html">Home</a>
+                <a href="index.php">Home</a>
             </li>
             <li>
-                <a href="about.html">About</a>
+                <a href="about.php">About</a>
             </li>
             <li>
                 <a href="https://github.com/AlfandaviAU">Project</a>
             </li>
             <li>
                 <a href="https://www.instagram.com/alfan.davv/">Contact Me</a>
+            </li>
+            <li>
+                <a href="app.php">Me</a>
             </li>
         </ul>
         <div class="triplebar" onclick = "navSlide()">
@@ -38,6 +48,7 @@
         </div>
     </nav>
     <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
     <div class="main">
         <img src="logo.svg" width="150px" height="150px">
         <h1>Davi Store by Alfandavi 13519211</h1>
@@ -46,7 +57,6 @@
     
     <section class="card-list">
       <div id="card-batch">
-          
       </div>
       <!-- <article class="card">
         <header class="card-header">
@@ -76,8 +86,7 @@
     </section>
     
     <script>
-      descBook(6);
-      // generateArticleBatch();
+      generateArticleBatch();
       // generateArticle("card2");
       // generateArticle("card");
       // generateArticle("card");

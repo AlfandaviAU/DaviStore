@@ -137,3 +137,43 @@ button:hover {
     background: linear-gradient(90deg,#ff8a00,#e52e71);
 } */
 
+.errormsg {
+    color:red;
+    text-align: center;
+    margin: auto;
+}
+
+#main{
+    text-align: left;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.main table {
+    border-collapse: collapse;
+}
+
+.main table, .main th, .main td {
+    border: 1px solid white;
+    padding: 8px 20px;
+}
+
+.main td:hover {
+    background: linear-gradient(90deg,#ff8a00,#e52e71);
+}
+.main th{
+    background: black;
+}
+
+.tombol {
+    display: flex;
+	justify-content: space-between;
+}
+
+.up_button, .down_button {
+    padding: 0 1rem;
+}
